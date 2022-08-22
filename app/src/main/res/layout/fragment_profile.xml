@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/profileToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Profile">
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_settings"
+            android:backgroundTint="@color/colorAccent"/>
+    </android.support.v7.widget.Toolbar>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:alignItems="center"
+        app:flexDirection="column"
+        app:justifyContent="space_evenly"
+        app:layout_constraintBottom_toTopOf="@id/addCreditCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileToolbar">
+
+        <FrameLayout
+            android:id="@+id/profilePicture"
+            android:layout_width="192dp"
+            android:layout_height="192dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_border"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:hint="@string/click_here_to_add_a_profile_picture"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <include
+            layout="@layout/layout_card_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/addCreditCard"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/goodGreen"
+        app:alignContent="stretch"
+        app:alignItems="center"
+        app:flexWrap="nowrap"
+        app:justifyContent="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_credit_card"
+            android:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/add_credit_card"
+            android:textAllCaps="true"
+            android:textAppearance="@android:style/TextAppearance.Material.Button"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+    <!-- TODO GÖR OM ALLA KNAPPAR TILL LINEAR LAYOUTS MED BUTTON STYLE FÖR BÄTTRE CENTERADE DRAWABLES-->
+
+</android.support.constraint.ConstraintLayout>
